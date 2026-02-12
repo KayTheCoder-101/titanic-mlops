@@ -10,3 +10,5 @@ all: setup download-data
 
 clean:
 	rm -rf data/raw/*.csv
+preprocess:
+	python src/preprocess.py
