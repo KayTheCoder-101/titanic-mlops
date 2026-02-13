@@ -1,4 +1,4 @@
-.PHONY: setup download-data preprocess features train predict clean all
+.PHONY: setup download-data preprocess features train predict evaluate clean all
 
 setup:
 	pip install -r requirements.txt
@@ -18,10 +18,16 @@ train:
 predict:
 	python src/predict.py
 
-all: setup download-data preprocess features train predict
+evaluate:
+	python src/evaluate.py
+
+all: setup download-data preprocess features train predict evaluate
 
 clean:
-	rm -rf data/raw/*.csv
-	rm -rf data/processed/*.csv
-	rm -rf features/*.csv
-	rm -rf predictions/*csv
+	rm -rf data/processed/*
+	rm -rf data/raw/*
+	rm -rf features/*
+	rm -rf models/*
+	rm -rf results/*
+
+
