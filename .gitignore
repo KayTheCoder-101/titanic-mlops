@@ -10,15 +10,6 @@ venv/
 .venv/
 mlops-base/
 
-# Data 
-data/
-
-features/
-
-models/
-
-results/
-
 # VS Code
 .vscode/
 
